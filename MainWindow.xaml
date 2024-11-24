@@ -1,0 +1,131 @@
+﻿<Window x:Class="Rezystory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rezystory"
+        mc:Ignorable="d"
+        Title="Bazy Rezystorow v1.0.0"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" d:DesignHeight="692.942" d:DesignWidth="1016.477">
+    <Grid Background="#FF232323" Opacity="0.99">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="92*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Custom Title Bar -->
+        <Border Background="#FF232323" Height="40" VerticalAlignment="Top" CornerRadius="10,10,0,0" MouseDown="TitleBar_MouseDown">
+            <Grid>
+                <TextBlock Text="Bazy Rezystorow v1.0.0"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="10,0,0,0"
+                           FontSize="20" FontFamily="Calibri" FontWeight="Bold" />
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="78">
+                    <Label.Background>
+                        <ImageBrush ImageSource="/logo-rw.png"/>
+                    </Label.Background>
+
+                </Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Height="17" Width="49">
+                    <!-- Close Button -->
+
+                    <!-- Minimize Button -->
+
+                    <!-- Maximize Button -->
+                    <!-- Maximize Button -->
+                    <!-- Minimize Button -->
+                    <!-- Maximize Button -->
+
+                    <Button Width="11" Height="12" Background="#00CA4E" BorderBrush="#00CA4E" Click="Maximize_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!-- Minimize Button -->
+                    <Button Width="11" Height="12" Background="#FFBD44" BorderBrush="#FFBD44" Click="Minimize_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Width="11" Height="12" Background="#FF605C" BorderBrush="#FF605C" Click="Close_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Ellipse Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <!-- Close Button -->
+                </StackPanel>
+
+
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Opacity="0.95" Background="#FF131313" Margin="0,40,0,5" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="461*"/>
+                <ColumnDefinition Width="237*"/>
+                <ColumnDefinition Width="221*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85*"/>
+                <RowDefinition Height="86*"/>
+            </Grid.RowDefinitions>
+            <!-- Background -->
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical">
+                <Border Background="#FF565656" CornerRadius="10" Width="146" Height="32">
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#FFD0D0D0" FontSize="20" FontFamily="Arial"><Run Language="pl-pl" Text="Sztuk:"/></TextBlock>
+                </Border>
+                <Border Background="#FF565656" CornerRadius="10" Width="146" Height="32">
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#FFD0D0D0" FontSize="20" FontFamily="Arial"><Run Language="pl-pl" Text="Sztuk:"/></TextBlock>
+                </Border>
+            </StackPanel>
+            <Border Background="#FF1F1F1F" Margin="0,10,0,10" CornerRadius="10,10,10,10" Grid.Row="0"/>
+            <Border Background="#FF1F1F1F" Margin="0,4,0,10" CornerRadius="10,10,10,10" Grid.Row="1"/>
+            <Calendar Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Grid.RowSpan="2"/>
+            
+
+
+            <!-- Border -->
+        </Grid>
+        <Grid Background="#FF131313" Margin="0,3,0,0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Ustawienia" BorderBrush="{x:Null}" Foreground="#FFAFAFAF" Background="#FF565656" BorderThickness="0,0,0,0" FontFamily="Arial" FontSize="14" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.489"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Column="1" Content="Zapisz do pliku" RenderTransformOrigin="0.175,0.1" Background="#FF565656" Foreground="#FFAFAFAF" BorderBrush="{x:Null}" FontSize="14" FontFamily="Arial" Margin="5,0,0,0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Grid>
+    </Grid>
+</Window>
